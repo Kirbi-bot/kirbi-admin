@@ -1,6 +1,4 @@
 module.exports = function (Kirbi) {
-	console.log(Kirbi.startTime);
-
 	if (Kirbi.startTime === undefined) {
 		Kirbi.startTime = Date.now();
 	}
