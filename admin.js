@@ -1,5 +1,9 @@
 module.exports = function (Kirbi) {
-	const startTime = Date.now();
+	console.log(Kirbi.startTime);
+
+	if (Kirbi.startTime === undefined) {
+		Kirbi.startTime = Date.now();
+	}
 
 	return {
 		commands: [
@@ -18,7 +22,7 @@ module.exports = function (Kirbi) {
 			description: 'returns the amount of time since the bot started',
 			process: (msg, suffix, isEdit, cb) => {
 				const now = Date.now();
-				let msec = now - startTime;
+				let msec = now - Kirbi.startTime;
 				console.log(`Uptime is ${msec} milliseconds`);
 				const days = Math.floor(msec / 1000 / 60 / 60 / 24);
 				msec -= days * 1000 * 60 * 60 * 24;
