@@ -1,4 +1,4 @@
-module.exports = function (Kirbi) {
+module.exports = Kirbi => {
 	if (Kirbi.startTime === undefined) {
 		Kirbi.startTime = Date.now();
 	}
